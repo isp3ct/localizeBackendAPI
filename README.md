@@ -134,6 +134,13 @@ João Victor dos Santos Costa
 
 ## DDL
 
+- **Lembre de criar o banco de dados:**
+
+```sql
+Create database localizeBackend
+go
+```
+
 <details>
 <summary><strong>Usuários</strong></summary>
 
