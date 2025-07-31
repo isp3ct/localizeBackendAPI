@@ -70,13 +70,31 @@ API REST para cadastro, consulta e gerenciamento de empresas e usuários, com au
 
 - Configure a string de conexão em `appsettings.json` ou via variáveis de ambiente.
 - O EF Core cria as tabelas automaticamente via migrations.
-
-### 3. Configuração do JWT
+- Recomenda-se criar um banco de dados chamado `LocalizeBackend`.
+- Exemplo de string de conexão para SQL Server local, substitua conforme necessário:
 
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=localhost;Database=LocalizeBackend;Trusted_Connection=True;TrustServerCertificate=True"
 },
+```
+### 2.1 Script para criação de migrations (Caso ache necessário) para o banco de dados:
+
+- Abra o terminal na raiz do projeto e execute:
+  ```bash
+  dotnet ef migrations add InitialCreate
+  dotnet ef database update
+  ```
+- Aplique as migrations para criar as tabelas necessárias no banco de dados.
+  ```bash
+  dotnet ef database update
+  ```
+- Esse comando conecta-se ao SQL Server e cria todas as tabelas no banco LocalizeBackend com base nos modelos e na migration criada.
+- O comando `dotnet ef database update` não cria o banco de dados se ele não existir, especialmente em ambientes sem permissão. Crie manualmente via DBeaver, SSMS ou CLI.
+
+### 3. Configuração do JWT
+
+```json
 "Jwt": {
   "Key": "sua-chave-secreta",
   "Issuer": "localizeBackendAPI",
