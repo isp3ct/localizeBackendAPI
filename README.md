@@ -119,13 +119,10 @@ API REST para cadastro, consulta e gerenciamento de empresas e usuários, com au
 
 ---
 
-## Observações Importantes
+## Observações Importantes para futuras implementações
 
-- **Nunca exponha sua chave JWT em repositórios públicos**
-- **Sempre utilize HTTPS em produção**
 - **Considere usar algoritmos de hash mais robustos para senhas (ex: bcrypt)**
-- **Valide o formato do CNPJ antes de consultar a ReceitaWS**
-- O backend não salva o JWT em cookies, apenas retorna no corpo da resposta. O armazenamento é responsabilidade do frontend.
+- O backend não salva o JWT em cookies, apenas retorna no corpo da resposta. Recomendo atualizar o código para armazenar o JWT em cookies seguros, especialmente em produção.
 
 ---
 
