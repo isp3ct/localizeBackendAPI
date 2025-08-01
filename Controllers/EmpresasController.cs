@@ -181,7 +181,7 @@ namespace localizeBackendAPI.Controllers
                     .ToListAsync();
 
                 if (empresas.Count == 0)
-                    return NotFound("Nenhuma empresa vinculada ao usuário.");
+                    return Ok(new List<Empresa>());
 
                 return empresas;
             }
